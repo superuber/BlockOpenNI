@@ -1,6 +1,6 @@
 #pragma once
 
-
+#include "cinder/Cinder.h"
 #include "VOpenNIDevice.h"
 
 
