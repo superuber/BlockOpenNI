@@ -210,8 +210,9 @@ void BlockOpenNISampleAppApp::update()
     }
     
 	// Update textures
-	mColorTex.update( getColorImage() );
-	mDepthTex.update( getDepthImage() );
+    // FIXME: creating new textures every time
+	mColorTex = getColorImage();
+	mDepthTex = getDepthImage();
     
 
 	// Uses manager to handle users.
@@ -219,7 +220,7 @@ void BlockOpenNISampleAppApp::update()
         it != mUsersTexMap.end();
         ++it )
     {
-        it->second.update( getUserImage( it->first ) );
+        it->second = getUserImage( it->first );
     }
 }
 
